@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    overflow-x: hidden;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  body {
+    overflow-x: hidden;
+    @apply bg-indigo-50 
+  }
+  
+  p {
+    @apply text-base
+  }
+
+}
+
+form > .formkit-messages {
+  display: none;
+}
+
+.ProseMirror {
+  font-family: 'Nunito', sans-serif;
+}
+
+.ProseMirror:focus {
+  @apply outline-none
+}
+
+.ProseMirror p {
+  @apply text-base text-gray-700 py-1
+}
+
+.ProseMirror h1 {
+  @apply text-3xl text-gray-900 pb-3 font-medium
+}
+
+.ProseMirror h2 {
+  @apply text-xl text-gray-900 pt-4 pb-1 font-medium
+}
+
+.ProseMirror h3 {
+  @apply text-base text-gray-900 pt-4 pb-1 font-bold
+}
+
+.ProseMirror ul li {
+  @apply list-disc
+}
+
+.ProseMirror ol li {
+  @apply list-decimal
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  @apply ml-4 marker:text-purple-500 my-3
+}
+
+.ProseMirror .is-empty::before {
+  content: attr(data-placeholder);
+  @apply  text-gray-400 h-0 float-left pointer-events-none;
+}
+
+.ProseMirror img {
+  @apply my-3 rounded;
+  max-width: 100%;
+  height: auto;
+}
+
+.ProseMirror img.ProseMirror-selectednode {
+  @apply outline outline-indigo-500 relative;
+}
+
+@layer components {
+  .input {
+    @apply w-full px-4 py-2 rounded mt-1
+  }
+
+  .input[data-variant="outlined"] {
+    @apply border border-purple-100 formkit-invalid:border-red-200
+  }
+  
+  .input[data-variant="shadow"] {
+    @apply shadow-inner
+  }
+
+  .error {
+    @apply text-red-600 text-sm mt-1
+  }
+}
