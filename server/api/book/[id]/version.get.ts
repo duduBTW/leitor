@@ -14,5 +14,11 @@ export default defineEventHandler(async (event) => {
         id,
       },
     },
+    select: {
+      id: true,
+      version: true,
+      isActive: true,
+      createdDate: true,
+    },
   });
 });
